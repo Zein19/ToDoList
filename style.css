@@ -45,6 +45,10 @@ h1 {
 
 }
 
+#add-task-btn:hover{
+    opacity: 0.7;
+}
+
 .todo-list {
     list-style-type: none;
     padding: 0;
@@ -66,6 +70,10 @@ h1 {
     border: none;
     background-color: blue;
     color: white;
+}
+
+.delete-btn:hover{
+    opacity: 0.7;
 }
 
 .todo-item.completed {
