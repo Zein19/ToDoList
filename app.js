@@ -2,6 +2,10 @@ const todoInput = document.getElementById('todo-input');
 const addTaskButton = document.getElementById('add-task-btn');
 const todoList = document.getElementById('todo-list');
 
+
+let tasks = Object.keys(localStorage);
+localStorage.setItem("tasks", JSON.stringify(tasks));
+
 const addTask = () => {
     const taskText = todoInput.value.trim();
 
@@ -9,6 +13,7 @@ const addTask = () => {
         const taskItem = createTaskItem(taskText);
         todoList.appendChild(taskItem);
         todoInput.value='';
+        localStorage.setItem(taskItem)
     }
 };
 
@@ -39,6 +44,7 @@ const createTaskItem =(taskText) => {
 const deleteTask = (event) =>{
     const taskItem =event.target.parentNode;
     todoList.removeChild(taskItem);
+    localStorage.removeItem(taskItem)
 };
 
 const toggleTask =(event)=>{
